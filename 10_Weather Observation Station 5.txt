@@ -1,1 +1,12 @@
 #Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths (i.e.: number of characters in the name). If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically.
+
+
+SELECT city as shortest_city_name, LENGTH(city) as shortest_length
+FROM STATION
+ORDER BY shortest_length ASC, shortest_city_name ASC
+LIMIT 1;
+
+SELECT city as longest_city_name, LENGTH(city) as longest_length
+FROM STATION
+ORDER BY longest_length DESC, longest_city_name ASC
+LIMIT 1;
